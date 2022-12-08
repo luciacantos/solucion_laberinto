@@ -25,3 +25,6 @@ def laberinto_final(laberinto):
     fila = 0
     #inicializar lista para guardar los movimientos
     solucion = ['Inicio']
+    #bucle para que mientras que no se salga del laberinto ni llegue a la salida'S' 
+    #seguira moviéndose hasta encontrar la salida ('S')
+    while ( fila <= 5 and columna <= 5) and laberinto[fila][columna] != 'S': #5 es la longitud del laberinto tanto para sus filas y sus columanas ya que es un cuadrado
