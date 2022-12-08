@@ -28,7 +28,7 @@ def laberinto_final(laberinto):
     #bucle para que mientras que no se salga del laberinto ni llegue a la salida'S'
     #seguira moviéndose hasta encontrar la salida ('S')
     while ( fila <= 5 and columna <= 5) and laberinto[fila][columna] != 'S': #5 es la longitud del laberinto tanto para sus filas y sus columanas ya que es un cuadrado
-    #-----ABAJO--------------------------------------------------------
+        #-----ABAJO--------------------------------------------------------
         #la casilla inferior de la que estás no puede ser mayor que el número de filas del laberinto (5)
         #la casilla tiene que tener '' para no tocar un muro  (definido como espacio en la amterior práctica del dibujo del laberinto)
         #para no volver a la casilla anterior por lo que hay que comprobar en la lista de movimientos que  el moviemto anterior no era hacia arriba
@@ -49,5 +49,12 @@ def laberinto_final(laberinto):
         elif fila - 1 >= 0 and laberinto[fila - 1][columna] == '' and solucion[-1] != 'Abajo'
             solucion.append('Arriba')
             fila = fila - 1
-        
+        #-----IZQUIERDA--------------------------------------------------
+        #la casilla a la izquierda no puede ser inferior a 0 porque estarías fuera del laberinto
+        #la casilla tiene que tener '' para que no sea muro
+        #para no volver a la casilla anterior se comprueba que en la lista de movimientos el anterior no sea 'Derecha'
+        elif columna - 1 >= 0 and laberinto[fila][columna] == '' and solucion[-1] != 'Derecha'
+            solucion.append('Izquierda')
+            columna = columna - 1
+
 
