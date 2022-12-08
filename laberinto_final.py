@@ -56,5 +56,7 @@ def laberinto_final(laberinto):
         elif columna - 1 >= 0 and laberinto[fila][columna] == '' and solucion[-1] != 'Derecha'
             solucion.append('Izquierda')
             columna = columna - 1
-
+        else:
+            #si no se puede mover a ningún sitio
+            solucion.append('No hay solución')
 
