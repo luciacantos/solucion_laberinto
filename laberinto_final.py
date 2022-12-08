@@ -23,4 +23,5 @@ def laberinto_final(laberinto):
     #inicializar fila y columna
     columna = 0
     fila = 0
-    
+    #inicializar lista para guardar los movimientos
+    solucion = ['Inicio']
