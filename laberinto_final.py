@@ -32,32 +32,34 @@ def laberinto_final(laberinto):
         #la casilla inferior de la que estás no puede ser mayor que el número de filas del laberinto (5)
         #la casilla tiene que tener '' para no tocar un muro  (definido como espacio en la amterior práctica del dibujo del laberinto)
         #para no volver a la casilla anterior por lo que hay que comprobar en la lista de movimientos que  el moviemto anterior no era hacia arriba
-        if fila + 1 <= 5 and laberinto[fila + 1][columna] == '' and solucion[-1] != 'Arriba':
+        if fila + 1 <= 5 and laberinto[fila + 1][columna] != 'X' and solucion[-1] != 'Arriba':
             solucion.append('Abajo')
             fila = fila + 1
         #-----DERECHA------------------------------------------------------
         #la casilla derecha de la que estás no puede ser mayor que el número de columnas del laberinto (5)
         #no puedes tocar un muro por lo que tiene que haber '' en la siguiente casilla
         #no se puede volver a la casilla anterior por lo que compruebas en la lista que el movimiento anterior no sea 'Izquierda'
-        elif columna + 1 <= 5 and laberinto[fila][columna+1] == '' and solucion[-1] != 'Izquierda':
+        elif columna + 1 <= 5 and laberinto[fila][columna+1] != 'X' and solucion[-1] != 'Izquierda':
             solucion. append('Derecha')
             columna = columna + 1
         #-----ARRIBA----------------------------------------------------
         #la casilla superior de la que estás no puede ser inferior a 0 o estarías fuera del laberinto
         #la casilla tiene que tener '' para no tocar un muro
         #para no volver a la casilla anterior compruebas en la listade movimientos que el arterior no es ' Abajo'
-        elif fila - 1 >= 0 and laberinto[fila - 1][columna] == '' and solucion[-1] != 'Abajo'
+        elif fila - 1 >= 0 and laberinto[fila - 1][columna] != 'X' and solucion[-1] != 'Abajo':
             solucion.append('Arriba')
             fila = fila - 1
         #-----IZQUIERDA--------------------------------------------------
         #la casilla a la izquierda no puede ser inferior a 0 porque estarías fuera del laberinto
         #la casilla tiene que tener '' para que no sea muro
         #para no volver a la casilla anterior se comprueba que en la lista de movimientos el anterior no sea 'Derecha'
-        elif columna - 1 >= 0 and laberinto[fila][columna] == '' and solucion[-1] != 'Derecha'
+        elif columna - 1 >= 0 and laberinto[fila][columna] != 'X' and solucion[-1] != 'Derecha':
             solucion.append('Izquierda')
             columna = columna - 1
         else:
             #si no se puede mover a ningún sitio
             solucion.append('No hay solución')
     solucion.append("Salida") #añadir 'Salida' al final de la lista
+    return solucion
 
+print('Movimientos para salir: ', laberinto_final(x))
