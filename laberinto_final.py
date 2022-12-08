@@ -59,4 +59,5 @@ def laberinto_final(laberinto):
         else:
             #si no se puede mover a ningún sitio
             solucion.append('No hay solución')
+    solucion.append("Salida") #añadir 'Salida' al final de la lista
 
